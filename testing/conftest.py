@@ -1,4 +1,7 @@
 import sys, os
+#__file__ represent /home/brianmuema/phase4_office/late_show_api/testing/conftest.py
+#os.path.dirname(__file__) represents: /home/brianmuema/phase4_office/late_show_api/testing
+# os.path.join(..., "..") "..“ means go up one directory level so it becomes: /home/brianmuema/phase4_office/late_show_api
 ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, ROOT_PATH)
 
