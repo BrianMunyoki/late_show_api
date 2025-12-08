@@ -6,18 +6,18 @@ from sqlalchemy.orm import validates
 from sqlalchemy_serializer import SerializerMixin
 import os
 
-# Configure Flask app FIRST
+# configuring the app
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
-# Initialize extensions WITH the app
+# Initialize eth app
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 api = Api(app)
 
-# Define models
+# Defining models
 class Episode(db.Model, SerializerMixin):
     __tablename__ = 'episodes'
     
@@ -114,7 +114,7 @@ class AppearancesResource(Resource):
         except Exception as e:
             return make_response(jsonify({"errors": ["Validation errors"]}), 400)
 
-# Add routes
+# Adding routes
 api.add_resource(EpisodesResource, '/episodes')
 api.add_resource(EpisodeByIdResource, '/episodes/<int:id>')
 api.add_resource(GuestsResource, '/guests')
@@ -122,7 +122,7 @@ api.add_resource(AppearancesResource, '/appearances')
 
 @app.route('/')
 def index():
-    return jsonify({"message": "Welcome to the Podcast API"})
+    return jsonify({"message": "Welcome to the Brians api"})
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
