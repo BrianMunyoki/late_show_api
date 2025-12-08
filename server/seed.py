@@ -17,7 +17,7 @@ def seed_database():
         # Create guests
         guests = [
             Guest(name="Hellen", occupation="actor"),
-            Guest(name="Makasi", occupation="actor"),
+            Guest(name="Makasi", occupation="director"),
             Guest(name="Brian", occupation="producer"),
             Guest(name="Hildah", occupation="script writer"),
         ]
