@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from flask_restful import Api, Resource
 from sqlalchemy.orm import validates
 from sqlalchemy_serializer import SerializerMixin
-import os
+
 
 # configuring the app
 app = Flask(__name__)
@@ -65,7 +65,7 @@ class Appearance(db.Model, SerializerMixin):
     def __repr__(self):
         return f'<Appearance Episode:{self.episode_id} Guest:{self.guest_id} Rating:{self.rating}>'
 
-# Define routes
+# Defining routes
 class EpisodesResource(Resource):
     def get(self):
         episodes = Episode.query.all()
