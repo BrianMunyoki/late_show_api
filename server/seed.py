@@ -8,18 +8,18 @@ def seed_database():
 
         # Create episodes
         episodes = [
-            Episode(date="1/11/99", number=1),
-            Episode(date="1/12/99", number=2),
-            Episode(date="1/13/99", number=3),
-            Episode(date="1/14/99", number=4),
+            Episode(date="2/10/95", number=1),
+            Episode(date="1/07/96", number=2),
+            Episode(date="1/4/92", number=3),
+            Episode(date="2/07/91", number=4),
         ]
 
         # Create guests
         guests = [
-            Guest(name="Michael J. Fox", occupation="actor"),
-            Guest(name="Sandra Bernhard", occupation="Comedian"),
-            Guest(name="Tracey Ullman", occupation="television actress"),
-            Guest(name="Robin Williams", occupation="actor"),
+            Guest(name="Hellen", occupation="actor"),
+            Guest(name="Makasi", occupation="actor"),
+            Guest(name="Brian", occupation="producer"),
+            Guest(name="Hildah", occupation="script writer"),
         ]
 
         # Add to session
