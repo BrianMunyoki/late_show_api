@@ -12,16 +12,22 @@ def client():
         with app.app_context():
             db.create_all()
             
-            # Create test data
-            episode1 = Episode(date="1/11/99", number=1)
-            episode2 = Episode(date="1/12/99", number=2)
-            guest1 = Guest(name="Test Guest 1", occupation="actor")
-            guest2 = Guest(name="Test Guest 2", occupation="comedian")
+            # Create unique test data
+            episode1 = Episode(date="3/15/01", number=10)
+            episode2 = Episode(date="4/22/01", number=11)
+            
+            guest1 = Guest(name="Alice Rivers", occupation="dancer")
+            guest2 = Guest(name="Mark Holloway", occupation="magician")
             
             db.session.add_all([episode1, episode2, guest1, guest2])
             db.session.commit()
             
-            appearance = Appearance(rating=5, episode_id=episode1.id, guest_id=guest1.id)
+            # One appearance for episode1 and guest1
+            appearance = Appearance(
+                rating=4,
+                episode_id=episode1.id,
+                guest_id=guest1.id
+            )
             db.session.add(appearance)
             db.session.commit()
             
