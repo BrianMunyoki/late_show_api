@@ -94,7 +94,7 @@ def test_create_appearance_success(client):
 
 def test_create_appearance_validation_error(client):
     invalid_appearance = {
-        'rating': 6,  # Invalid rating
+        'rating': 6,  
         'episode_id': 1,
         'guest_id': 1
     }
@@ -108,4 +108,5 @@ def test_create_appearance_validation_error(client):
     assert response.status_code == 400
     
     data = json.loads(response.data)
+
     assert 'errors' in data
